@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Javascript Quiz</title>
-    <link type="stylesheet" href="./Assets/css/style.css">
+    <link rel="stylesheet" href="./Assets/css/style.css">
 </head>
 <body>
     <nav>
@@ -12,6 +12,38 @@
         <p>Time: </p>
     </nav>
 
+    <section id="openPage">
+        <h1>Coding Quiz Challenge</h1>
+        <p>This tests coding I guess</p>
+        <button class="btn" onclick="runQuiz(quizInfo)" id="start">Start Quiz</button>
+    </section>
+
+    <section id="questions">
+        <h2>Question</h2>
+        <button class="btn" id="0">1</button>
+        <button class="btn" id="1">2</button>
+        <button class="btn" id="2">3</button>
+        <button class="btn" id="3">4</button>
+    </section>
+
+    <section id="enterScore">
+        <h2>All Done</h2>
+        <p>Your final score is: </p>
+        <form>
+            <label for="name">Enter initials:</label>
+            <input type="text" placeholder="Your initials" name="name" id="name" class="form-input"/>
+            <button type="submit" class="btn" id="nameEnter">Submit</button>
+        </form>
+    </section>
+
+    <section id="highscores">
+        <h2>Highscores</h2>
+        <ol id="scoreList">
+
+        </ol>
+        <button class="btn" id="goBack">Go Back</button>
+        <button class="btn" id="clearScore">Clear Score</button>
+    </section>
 
 
     <script src="./Assets/javascript/script.js"></script>

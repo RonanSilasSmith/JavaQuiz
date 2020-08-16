@@ -52,4 +52,3 @@ var addPoints = function(points, pointsAwarded){
     return points;
 }
 
-runQuiz(quizInfo);
