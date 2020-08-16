@@ -25,6 +25,7 @@ var quizInfo = [
     }
 ]
 var pointTotal = 0;
+var time = 0;
 
 
 var runQuiz = function(question){
@@ -35,6 +36,7 @@ var runQuiz = function(question){
             pointTotal = addPoints(pointTotal, question[i].pointValue);
         }else{
             alert("false");
+            pointTotal = addPoints(pointTotal, -3)
         }
     }
     alert("Quiz Over! you have " + pointTotal + " points!");
