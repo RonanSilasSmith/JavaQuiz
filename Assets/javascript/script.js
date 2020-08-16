@@ -24,31 +24,66 @@ var quizInfo = [
         pointValue: 3
     }
 ]
-var pointTotal = 0;
 var time = 0;
+var questionNo = 0;
 
+var runQuiz = function(){
+    questionNo = 0;
+    document.getElementById("questions").style.display = "block";
+    document.getElementById("openPage").style.display = "none";
 
-var runQuiz = function(question){
-    for(i = 0; i < question.length; i++){
-        var answer = prompt(question[i].question + " answers are: " + question[i].answers);
-        if(question[i].answers[question[i].correct] === answer){
-            alert("correct");
-            pointTotal = addPoints(pointTotal, question[i].pointValue);
-        }else{
-            alert("false");
-            pointTotal = addPoints(pointTotal, -3)
+    setQuestions();
+}
+
+var setQuestions = function(){
+    document.getElementById("quizHeader").innerHTML = (quizInfo[questionNo].question);
+    document.getElementById("0").innerHTML = (quizInfo[questionNo].answers[0]);
+    document.getElementById("1").innerHTML = (quizInfo[questionNo].answers[1]);
+    document.getElementById("2").innerHTML = (quizInfo[questionNo].answers[2]);
+    document.getElementById("3").innerHTML = (quizInfo[questionNo].answers[3]);
+}
+
+var checkAnswer = function(check){
+    if(quizInfo[questionNo].correct===check){
+        time += 3;
+        questionNo++;
+        if(questionNo >= quizInfo.length){
+            youWin();
         }
+        else{
+            setQuestions();
+            //you win alert
+        }
+
+    }else{
+        time -= 3;
+        //you lose alert
     }
-    alert("Quiz Over! you have " + pointTotal + " points!");
-    saveScore();
 }
 
-var saveScore = function(){
-    alert("score saved");
+var clear = function(){
+    document.getElementById("questions").style.display = "none";
+    document.getElementById("enterScore").style.display = "none";
+    document.getElementById("openPage").style.display = "none";
+    document.getElementById("highscores").style.display = "none";
 }
 
-var addPoints = function(points, pointsAwarded){
-    points += pointsAwarded;
-    return points;
+var youWin = function(){
+    clear();
+    document.getElementById("enterScore").style.display = "block";
 }
 
+
+var reset = function(){
+    clear();
+    document.getElementById("openPage").style.display = "block";
+}
+
+var highscores = function(){
+    clear();
+    document.getElementById("highscores").style.display = "block";
+}
+
+var clearScore = function(){
+    
+}

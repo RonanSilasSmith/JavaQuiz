@@ -8,7 +8,7 @@
 </head>
 <body>
     <nav>
-        <button class="btn" id="viewScore">View Highscores</button>
+        <button class="btn" id="viewScore" onclick="highscores()">View Highscores</button>
         <p>Time: </p>
     </nav>
 
@@ -19,12 +19,12 @@
     </section>
 
     <section id="questions">
-        <h2>Question</h2>
+        <h2 id="quizHeader">Question</h2>
         <div class="answerButtons">
-            <button class="btn" id="0">1</button>
-            <button class="btn" id="1">2</button>
-            <button class="btn" id="2">3</button>
-            <button class="btn" id="3">4</button>
+            <button class="btn" id="0" onclick="checkAnswer(0)">1</button>
+            <button class="btn" id="1" onclick="checkAnswer(1)">2</button>
+            <button class="btn" id="2" onclick="checkAnswer(2)">3</button>
+            <button class="btn" id="3" onclick="checkAnswer(3)">4</button>
         </div>
     </section>
 
@@ -43,8 +43,8 @@
         <ol id="scoreList">
 
         </ol>
-        <button class="btn" id="goBack">Go Back</button>
-        <button class="btn" id="clearScore">Clear Score</button>
+        <button class="btn" id="goBack" onclick="reset()">Go Back</button>
+        <button class="btn" id="clearScore" onclick="clearScore()">Clear Score</button>
     </section>
 
 
