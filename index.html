@@ -9,7 +9,7 @@
 <body>
     <nav>
         <button class="btn" id="viewScore" onclick="highscores()">View Highscores</button>
-        <p>Time: </p>
+        <p id="time">Time: </p>
     </nav>
 
     <section id="openPage">
@@ -30,18 +30,18 @@
 
     <section id="enterScore">
         <h2>All Done</h2>
-        <p>Your final score is: </p>
+        <p id="scoredisplay">Your final score is: </p>
         <form>
             <label for="name">Enter initials:</label>
             <input type="text" placeholder="Your initials" name="name" id="name" class="form-input"/>
-            <button type="submit" class="btn" id="nameEnter">Submit</button>
+            <button class="btn" type="button" id="nameEnter" onclick="submitHS()">Submit</button>
         </form>
     </section>
 
     <section id="highscores">
         <h2>Highscores</h2>
         <ol id="scoreList">
-
+            <li id="highscore"></li>
         </ol>
         <button class="btn" id="goBack" onclick="reset()">Go Back</button>
         <button class="btn" id="clearScore" onclick="clearScore()">Clear Score</button>

@@ -50,3 +50,7 @@ section{
 #enterScore{
     display: none;
 }
+
+button:hover{
+    opacity: .5;
+}
